@@ -11,8 +11,8 @@ app.use(cors()); // this solves cors problems
 const server = http.createServer(app);
 
 const io = new Server(server, {
-    cors: { // with this we can solve cors issues
-        origin: ["http://localhost:3000", "http://192.168.100.130:3000"],
+    cors: { // with this we can solve cors issues. // primeiro argumento era "http://localhost:3000" e segundo, "http://192.168.100.130:3000"
+        origin: ["http://localhost:3000", "http://192.168.100.130:3000", "https://leo-chat-app-deploy.herokuapp.com/"],
         methods: ["GET", "POST"], //
     },
 });
@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
 
 
 })// this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
-
-server.listen(process.env.PORT || 3001, () => {
+// aqui antes era 3001
+server.listen(process.env.PORT || 3000, () => {
     console.log("SERVER RUNNING") // everytime the server runs, it will appear this message on the console
 })
