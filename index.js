@@ -38,12 +38,16 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
         console.log("User Disconnected", socket.id); // this event listens when the user connects or disconnects
     });
-
-
    // this means server will listen pro process.env.your_Port OR 80
-})// this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
+})
+
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "./.env") });
+
+const NODE_PORT = process.env.PORT || 3001
+// this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
 // aqui antes era 3001
-server.listen(3001 || '0.0.0.0', () => {
+server.listen(NODE_PORT, () => {
     console.log("SERVER RUNNING") // everytime the server runs, it will appear this message on the console
 })
 
