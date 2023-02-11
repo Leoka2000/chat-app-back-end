@@ -41,9 +41,6 @@ io.on("connection", (socket) => {
    // this means server will listen pro process.env.your_Port OR 80
 })
 
-const path = require("path");
-require("dotenv").config({ path: path.join(__dirname, "./.env") });
-
 const NODE_PORT = process.env.PORT || 3001
 // this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
 // aqui antes era 3001
