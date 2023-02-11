@@ -12,13 +12,13 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: { // with this we can solve cors issues. // primeiro argumento era "http://localhost:3000" e segundo, "http://192.168.100.130:3000"
-        origin: ["http://localhost:3000", "http://192.168.100.130:3000", "https://leo-chat-app-deploy.herokuapp.com/"],
+        origin: ["http://localhost:3000", "http://192.168.100.130:3000", "https://leo-chat-app-deploy.herokuapp.com"],
         methods: ["GET", "POST"], //
     },
 });
 
 
-
+console.log(process.env)
 
 
 io.on("connection", (socket) => {
