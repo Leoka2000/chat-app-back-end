@@ -40,6 +40,6 @@ io.on("connection", (socket) => {
 
 })// this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
 // aqui antes era 3001
-server.listen(process.env.PORT || 3000, () => {
+server.listen(process.env.PORT || 3001, () => {
     console.log("SERVER RUNNING") // everytime the server runs, it will appear this message on the console
 })
