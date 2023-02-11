@@ -11,16 +11,16 @@ app.use(cors()); // this solves cors problems
 const server = http.createServer(app);
 
 
-
+const NODE_PORT = process.env.PORT || 3001
 const io = new Server(server, {
     cors: { // with this we can solve cors issues. // primeiro argumento era "http://localhost:3000" e segundo, "http://192.168.100.130:3000"
-        origin: ["0.0.0.0", "https://leo-chat-app-deploy.herokuapp.com"],
+        origin: "*",
+        // quando eu coloquei "*", funcionou
         methods: ["GET", "POST"], //
     },
 });
 
 
-console.log(process.env)
 
 
 io.on("connection", (socket) => {
@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
    // this means server will listen pro process.env.your_Port OR 80
 })
 
-const NODE_PORT = process.env.PORT || 3001
+
 // this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
 // aqui antes era 3001
 server.listen(NODE_PORT, () => {
