@@ -43,7 +43,7 @@ io.on("connection", (socket) => {
    // this means server will listen pro process.env.your_Port OR 80
 })// this means that we are listening to the market event, in this case we are listening to the event "on", which means someone is connecting
 // aqui antes era 3001
-server.listen(3001, process.env.YOUR_HOST || '0.0.0.0', () => {
+server.listen(3001 || '0.0.0.0', () => {
     console.log("SERVER RUNNING") // everytime the server runs, it will appear this message on the console
 })
 
