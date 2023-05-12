@@ -15,7 +15,7 @@ const NODE_PORT = process.env.PORT || 3001
 const io = new Server(server, {
     cors: { // with this we can solve cors issues. // primeiro argumento era "http://localhost:3000" e segundo, "http://192.168.100.130:3000"
         origin: "*",
-        // quando eu coloquei "*", funcionou
+        // quando eu coloquei "*", funcionou!!!
         methods: ["GET", "POST"], //
     },
 });
